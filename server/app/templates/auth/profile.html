@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+<div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-6 text-center">Profile</h2>
+
+  <div class="space-y-4">
+    <div class="bg-gray-50 p-4 rounded-md">
+      <p class="text-sm text-gray-600">Email</p>
+      <p class="font-medium">{{ current_user.email }}</p>
+    </div>
+
+    <div class="bg-gray-50 p-4 rounded-md">
+      <p class="text-sm text-gray-600">Auth Provider</p>
+      <p class="font-medium">{{ current_user.auth_provider }}</p>
+    </div>
+  </div>
+
+  <div class="mt-8">
+    <a
+      href="{{ url_for('auth.logout') }}"
+      class="w-full inline-flex justify-center items-center px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+    >
+      <i class="fas fa-sign-out-alt mr-2"></i> Logout
+    </a>
+  </div>
+</div>
+{% endblock %}
